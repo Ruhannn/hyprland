@@ -1,0 +1,84 @@
+@import "mocha.css";
+
+* {
+  font-family: FantasqueSansMono Nerd Font;
+  font-size: 17px;
+  min-height: 0;
+}
+#waybar {
+  background: transparent;
+  color: @text;
+  margin: 5px 5px;
+}
+
+#workspaces {
+  border-radius: 1rem;
+  margin: 5px;
+  background-color: @surface0;
+  margin-left: 0.5rem;
+  padding: 0.5rem;
+}
+
+#workspaces button {
+  color: @lavender;
+  border-radius: 0.5rem;
+  padding: 0.4rem 1rem;
+  background-color: @surface0;
+  border: none;
+}
+#workspaces button:not(:first-child) {
+  margin-left: 10px;
+}
+
+#workspaces button.active {
+  color: @sky;
+  border-radius: 0.5rem;
+  background: @mantle;
+}
+
+#workspaces button:hover {
+  transition: all 500ms ease;
+  background: @mantle;
+  border: 0px transparent;
+}
+
+#clock,
+#custom-logout,
+#custom-reboot,
+#custom-notification {
+  background-color: @surface0;
+  padding: 0.5rem 1rem;
+  margin: 5px 0;
+}
+
+#clock {
+  color: @blue;
+  border-radius: 1rem 0rem 0rem 1rem;
+}
+#custom-notification {
+  color: @blue;
+  border-radius: 0rem 1rem 1rem 0rem;
+  background: @mantle;
+
+
+
+}
+
+#custom-logout {
+  border-radius: 1rem 0px 0px 1rem;
+  color: @lavender;
+}
+
+#custom-reboot {
+  margin-right: 1rem;
+  border-radius: 0px 1rem 1rem 0px;
+  color: @red;
+}
+
+#tray {
+  background-color: @surface0;
+  padding: 0.5rem 1rem;
+  margin: 5px 0;
+  margin-right: 1rem;
+  border-radius: 1rem;
+}
