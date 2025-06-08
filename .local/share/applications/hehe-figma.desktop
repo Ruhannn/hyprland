@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Figma
+Exec=thorium-browser --app='https://www.figma.com'
+Icon=ftwa-figma
+Terminal=false
+StartupNotify=true
+StartupWMClass=hehe-figma

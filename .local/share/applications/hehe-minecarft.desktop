@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Minecraft
+Icon=/home/ruhan/Pictures/icons/mc_icon.png
+Exec=java -jar Downloads/Programs/SKlauncher-3.2.12.jar
+Terminal=flase

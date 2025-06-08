@@ -5,7 +5,12 @@
   // Choose the order of the modules
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["clock", "custom/notification"],
-  "modules-right": ["tray", "custom/logout", "custom/reboot"],
+  "modules-right": [
+    "tray",
+    "custom/shutdown",
+    "custom/reboot",
+    "custom/logout"
+  ],
   "tray": {
     "icon-size": 21,
     "spacing": 10,
@@ -16,15 +21,21 @@
     "format": "{:%a %b %d %I:%M %p}",
     "tooltip": false
   },
-  "custom/logout": {
+  "custom/shutdown": {
     "tooltip": false,
-    "on-click": "sh -c '(hyprctl dispatch exit)'",
+    // "on-click": "sh -c '(hyprctl dispatch exit)'",
+    "on-click": "shutdown now",
     "format": "😉"
   },
   "custom/reboot": {
     "tooltip": false,
     "on-click": "sh -c '(reboot)'",
     "format": "😭"
+  },
+  "custom/logout": {
+    "tooltip": false,
+    "on-click": "sh -c '(reboot)'",
+    "format": "😍"
   },
   "custom/notification": {
     "tooltip": false,
@@ -45,5 +56,6 @@
     "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
     "escape": true
-  }
+  },
+  "custom/details": {}
 }

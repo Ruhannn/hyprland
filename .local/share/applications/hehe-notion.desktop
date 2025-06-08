@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Notion
+Exec=thorium-browser --app='https://www.notion.so' --enable-features=UseOzonePlatform --ozone-platform=wayland
+Icon=Notion
+Terminal=false
+StartupNotify=true
+StartupWMClass=hehe-notion

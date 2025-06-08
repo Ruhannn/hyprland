@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Excalidraw
+Exec=thorium-browser --app='https://excalidraw.com'
+Icon=/home/ruhan/Pictures/icons/excalidraw.png
+Terminal=false
+StartupNotify=true
+StartupWMClass=hehe-excalidraw

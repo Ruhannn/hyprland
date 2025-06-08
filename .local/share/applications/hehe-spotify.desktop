@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Spotify
+Exec=thorium-browser --app='https://open.spotify.com'
+Icon=spotify
+Terminal=false
+StartupNotify=true
+StartupWMClass=hehe-spotify
