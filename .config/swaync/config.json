@@ -36,13 +36,13 @@
     }
   },
   "notification-visibility": {
-    "example-name": {
+    "block-instagram-generic": {
       "state": "muted",
-      "urgency": "Low",
-      "app-name": "Spotify"
+      "app-name": "Instagram",
+      "body": "You have unseen notifications\\."
     }
   },
-  "widgets": ["label", "mpris", "volume", "title", "dnd", "notifications"],
+  "widgets": ["dnd", "mpris", "volume", "title", "notifications"],
   "widget-config": {
     "title": {
       "text": "Notifications",
@@ -61,7 +61,7 @@
       "image-radius": 12
     },
     "volume": {
-      "label": ">",
+      "label": "",
       "show-per-app": true
     }
   }

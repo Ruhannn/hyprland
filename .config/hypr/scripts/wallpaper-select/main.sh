@@ -80,11 +80,13 @@ if [ -n "$selected" ]; then
         # Set wallpaper using swww with the original file
         matugen image "$original_path"
 
-        # Save the selection for persistence
-        echo "$original_path" >"$HOME/.cache/current_wallpaper"
-
         # Optional: Notify user
         notify-send -t 1500 "Wallpaper" "Wallpaper has been updated" -i "$original_path"
+        # Save the selection for persistence
+        echo "$original_path" >"$HOME/.cache/current_wallpaper"
+        cp "$original_path" "$HOME/.cache/current_wallpaper.png"
+        # Dim the original wallpaper by 40%
+        convert "$original_path" -fill black -colorize 40% "$HOME/.cache/current_wallpaper_dim.png"
     else
         notify-send -t 1500 "Wallpaper Error" "Could not find the original wallpaper file."
     fi

@@ -1,5 +1,3 @@
-# Add deno completions to search path
-if [[ ":$FPATH:" != *":/home/ruhan/.zsh/completions:"* ]]; then export FPATH="/home/ruhan/.zsh/completions:$FPATH"; fi
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="bira"
@@ -8,7 +6,7 @@ ZSH_THEME="bira"
 zstyle ':omz:update' mode reminder
 
 # my plugins
-plugins=(aliases copyfile copypath dirhistory fancy-ctrl-z sudo zoxide zsh-interactive-cd zsh-autosuggestions zsh-syntax-highlighting zsh-fzf-history-search zsh-completions)
+plugins=(aliases copyfile copypath dirhistory fancy-ctrl-z sudo zoxide zsh-interactive-cd zsh-autosuggestions zsh-syntax-highlighting zsh-fzf-history-search)
 
 source $ZSH/oh-my-zsh.sh
 # my custom fn
@@ -57,12 +55,12 @@ alias mv='mv -i'
 alias cp='cp -i'
 alias cpf='copyfile'
 alias cpp='copypath'
-alias yuml='yum list --installed'                         # l
-alias yumauto='sudo yum autoremove && sudo yum clean all' # auto
-alias u='sudo yum update && sudo yum upgrade'             # u
-alias i='sudo yum install'                                # i
-alias r='sudo yum remove'                                 # r
-alias s='yum search'                                      # s
+alias yuml='yum list --installed'                                                       # l
+alias yumauto='sudo yum autoremove && sudo yum clean all'                               # auto
+alias u='sudo yum update --disablerepo=amdgpu && sudo yum upgrade --disablerepo=amdgpu' # u
+alias i='sudo yum install --disablerepo=amdgpu'                                         # i
+alias r='sudo yum remove'                                                               # r
+alias s='yum search  --disablerepo=amdgpu'                                              # s
 alias discord-update='sudo /home/ruhan/Downloads/Programs/EquilotlCli-linux'
 alias h='history'
 alias hs='history | grep'
@@ -80,6 +78,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 # ! bun
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 [ -s "/home/ruhan/.bun/_bun" ] && source "/home/ruhan/.bun/_bun"
@@ -106,3 +106,6 @@ eval $(thefuck --alias ew)
 # Initialize zsh completions (added by deno install script)
 autoload -Uz compinit
 compinit
+# if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
+#   exec Hyprland
+# fi

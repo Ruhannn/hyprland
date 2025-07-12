@@ -2,40 +2,49 @@
   "layer": "top", // Waybar at top layer
   "position": "top", // Waybar position (top|bottom|left|right)
   // "width": 1280, // Waybar width
-  // Choose the order of the modules
   "modules-left": ["hyprland/workspaces"],
-  "modules-center": ["clock", "custom/notification"],
-  "modules-right": [
-    "tray",
-    "custom/shutdown",
-    "custom/reboot",
-    "custom/logout"
-  ],
+  "modules-center": ["custom/clock", "custom/notification"],
+  "modules-right": ["tray", "pulseaudio", "custom/wlogout"],
   "tray": {
     "icon-size": 21,
     "spacing": 10,
-    "show-empty": false
-  },
-  "clock": {
-    "timezone": "Asia/Dhaka",
-    "format": "{:%a %b %d %I:%M %p}",
+    "show-empty": false,
     "tooltip": false
   },
-  "custom/shutdown": {
+  // "clock": {
+  //   "timezone": "Asia/Dhaka",
+  //   "format": "{:%a %b %d %I:%M %p}",
+  //   "tooltip": false
+  // },
+  "custom/clock": {
+    "exec": "~/.config/waybar/getTime.sh",
+    "interval": 60,
+    "format": "{}",
+    "markup": "pango",
     "tooltip": false,
-    // "on-click": "sh -c '(hyprctl dispatch exit)'",
-    "on-click": "shutdown now",
-    "format": "😉"
   },
-  "custom/reboot": {
-    "tooltip": false,
-    "on-click": "sh -c '(reboot)'",
-    "format": "😭"
+  "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": " {volume}%",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": " ",
+      "hands-free": " ",
+      "headset": " ",
+      "phone": " ",
+      "portable": " ",
+      "car": " ",
+      "default": ["", "", ""]
+    },
+    "on-click": "pavucontrol"
   },
-  "custom/logout": {
+  "custom/wlogout": {
     "tooltip": false,
-    "on-click": "sh -c '(reboot)'",
-    "format": "😍"
+    "on-click": "sh -c '(wlogout)'",
+    "format": "  "
   },
   "custom/notification": {
     "tooltip": false,
@@ -56,6 +65,5 @@
     "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
     "escape": true
-  },
-  "custom/details": {}
+  }
 }

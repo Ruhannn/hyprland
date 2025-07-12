@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Instagram
+Exec=/usr/bin/thorium-browser --app='https://www.instagram.com/direct/t/17843750016427669'
+Icon=instagram
+Terminal=false
+StartupNotify=true
+StartupWMClass=hehe-Instagram

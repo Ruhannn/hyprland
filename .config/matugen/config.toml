@@ -9,20 +9,16 @@ input_path = './templates/hypr.css'
 output_path = '~/.config/hypr/colors.conf'
 post_hook = 'hyprctl reload'
 
-[templates.waybar]
-input_path = './templates/waybar.css'
-output_path = '~/.config/waybar/colors.css'
-post_hook = 'pkill -SIGUSR2 waybar'
-
 [templates.kitty]
 input_path = './templates/kitty.css'
 output_path = '~/.config/kitty/colors.conf'
 post_hook = "kitty @ set-colors -a -c ~/.config/kitty/colors.conf"
+
 [templates.wofi]
 input_path = './templates/wofi.css'
 output_path = '~/.config/wofi/style.css'
-[templates.swaync]
-input_path = './templates/swaync.css'
-output_path = '~/.config/swaync/colors.css'
-post_hook = "swaync-client -rs && swaync-client --reload-config"
 
+[templates.define-color]
+input_path = './templates/define-color.css'
+output_path = '~/.cache/define-color.css'
+post_hook = 'pkill -SIGUSR2 waybar && swaync-client -rs && swaync-client --reload-config'

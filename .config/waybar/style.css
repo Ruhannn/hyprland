@@ -1,11 +1,15 @@
-@import "colors.css";
+@import "/home/ruhan/.cache/define-color.css";
 
 * {
   font-family: FantasqueSansMono Nerd Font;
+  /* font-family: "Fira Sans Semibold", "Font Awesome 6 Free", FontAwesome, Roboto,
+    Helvetica, Arial, sans-serif; */
   font-size: 17px;
   min-height: 0;
 }
+
 #waybar {
+  /* background: rgba(0, 0, 0, 0.5); */
   background: transparent;
   color: @primary;
   margin: 5px 5px;
@@ -43,39 +47,39 @@
   opacity: 0.7;
 }
 
-#clock,
-#custom-logout,
-#custom-shutdown,
-#custom-reboot,
+/* #clock, */
+#custom-wlogout,
+#pulseaudio,
+#custom-clock,
 #custom-notification {
   background-color: @background;
   padding: 0.5rem 1rem;
   margin: 5px 0;
 }
 
-#clock {
+/* #clock */
+#custom-clock {
   color: @primary_fixed;
   border-radius: 1rem 0rem 0rem 1rem;
 }
+
 #custom-notification {
+  /* border: 1px solid @primary_fixed; */
   color: @primary_fixed;
   border-radius: 0rem 1rem 1rem 0rem;
   background: @primary_container;
 }
 
-#custom-logout {
-  border-radius: 0px 1rem 1rem 0px;
-  color: @tertiary;
+#custom-wlogout {
+  border-radius: 1rem;
+  color: @primary_fixed;
   margin-right: 1rem;
 }
 
-#custom-reboot {
+#pulseaudio {
+  border-radius: 1rem;
   color: @primary_fixed;
-}
-
-#custom-shutdown {
-  color: @error;
-  border-radius: 1rem 0rem 0rem 1rem;
+  margin-right: 1rem;
 }
 
 #tray {
@@ -84,4 +88,27 @@
   margin: 5px 0;
   margin-right: 1rem;
   border-radius: 1rem;
+  color: @primary;
+}
+
+#tray menu {
+  padding: 14px;
+  border-radius: 1rem;
+  border: 3px solid @primary;
+  background-color: @background;
+  color: @primary;
+}
+
+#tray menu *:hover {
+  border-radius: 0.5rem;
+  background-color: @surface_container;
+}
+
+#tray > widget {
+  opacity: 0.3;
+}
+
+#tray > widget:hover {
+  opacity: 1;
+  transition: 300ms;
 }
